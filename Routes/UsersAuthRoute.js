@@ -12,6 +12,7 @@ const { isloggedOut } = require("../middleware & guard/auth-guard");
 const multer = require("multer");
 
 router.get("/auth/check", (req, res) => {
+  console.log(req.user);
   if (!req.isAuthenticated())
     return res.status(403).send("You must login to view this content");
   const user = {
