@@ -13,11 +13,11 @@ module.exports = function (app) {
       name: process.env.SESS_NID,
       secret: process.env.SESS_SRC,
       resave: true,
-      saveUninitialized: false,
+      saveUninitialized: true,
       cookie: {
         maxAge: 1000 * 24 * 60 * 60 * 365,
         httpOnly: true,
-        secure: true,
+        secure: false,
       },
     })
   );
