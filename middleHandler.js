@@ -7,7 +7,7 @@ const cloudinary = require("cloudinary").v2;
 
 module.exports = function (app) {
   dotenv.config();
-  app.use(cors({ origin: process.env.ALLOWED_DOMAINS, credentials: true }));
+  app.use(cors({ origin: "*", credentials: true }));
   app.use(express.json());
   cloudinary.config({
     cloud_name: "dinvcqnor",
