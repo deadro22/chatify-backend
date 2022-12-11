@@ -19,6 +19,7 @@ module.exports = function (app) {
         httpOnly: true,
         secure: false,
         sameSite: "none",
+        path: "/",
       },
     })
   );
