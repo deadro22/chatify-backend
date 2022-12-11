@@ -33,8 +33,8 @@ router.post("/login", isloggedOut, (req, res, next) => {
     console.log("User is: ", user);
     if (!user) return res.status(404).send("Wrong email or password");
     req.session.regenerate(() => {
-      console.log("Regenarating .... ");
       req.login(user, async (err) => {
+        console.log("Regenarating .... ", err);
         res.cookie("CNT_ID", "idk");
         res.send(user);
       });
