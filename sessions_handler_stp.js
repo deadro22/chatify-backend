@@ -16,8 +16,8 @@ module.exports = function (app) {
       saveUninitialized: true,
       cookie: {
         maxAge: 1000 * 24 * 60 * 60 * 365,
-        httpOnly: false,
-        secure: false,
+        httpOnly: true,
+        secure: true,
       },
     })
   );
