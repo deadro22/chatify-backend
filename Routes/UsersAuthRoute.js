@@ -34,7 +34,7 @@ router.post("/login", isloggedOut, (req, res, next) => {
     if (!user) return res.status(404).send("Wrong email or password");
     req.session.regenerate(() => {
       req.login(user, async (err) => {
-        console.log("Loggged in by: ", user);
+        console.log("Loggged in by: ", err);
         res.send(user);
       });
     });
