@@ -26,9 +26,11 @@ router.get("/auth/check", (req, res) => {
 });
 
 router.post("/login", isloggedOut, (req, res, next) => {
+  console.log(req.body);
   const { error } = validateLogin(req.body);
   if (error) return res.status(422).send(error.details[0].message);
   passport.authenticate("local", (err, user) => {
+    console.log("User is: ", user);
     if (!user) return res.status(404).send("Wrong email or password");
     req.session.regenerate(() => {
       req.login(user, async (err) => {
