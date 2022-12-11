@@ -7,7 +7,9 @@ const cloudinary = require("cloudinary").v2;
 
 module.exports = function (app) {
   dotenv.config();
-  app.use(cors({ credentials: true }));
+  app.use(
+    cors({ origin: /*"https://rvchatify.vercel.app"*/ true, credentials: true })
+  );
   app.use(express.json());
   cloudinary.config({
     cloud_name: "dinvcqnor",
